@@ -21,14 +21,20 @@ public class Validator {
      * @return результат проверки
      */
     @WebMethod
-    public boolean isValid(@WebParam(name = "email") String email) {
-        boolean isValid = false;
+    public boolean isValid(
+            @WebParam(name = "email") String email,
+            @WebParam(name = "domain2level") boolean domain2level
+    ) {
+        boolean isValid;
 
         EmailValidator validator = new EmailValidator();
-        Pattern ptr = Pattern.compile("^[-\\w.]+@([A-z0-9][-A-z0-9]+\\.)+[A-z]{2,4}$");
-
         isValid = validator.isValid(email, null);
-        isValid = isValid && ptr.matcher(email).matches();
+
+        // Проверка на обязательное наличие домена второго уровня
+        if (domain2level) {
+            Pattern ptr = Pattern.compile("^[-\\w.]+@([A-z0-9]+\\.)+[A-z]{2,4}$");
+            isValid = isValid && ptr.matcher(email).matches();
+        }
 
         return isValid;
     }
