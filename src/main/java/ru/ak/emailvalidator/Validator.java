@@ -32,7 +32,7 @@ public class Validator {
 
         // Проверка на обязательное наличие домена второго уровня
         if (domain2level) {
-            Pattern ptr = Pattern.compile("^[-\\w.]+@([A-z0-9]+\\.)+[A-z]{2,4}$");
+            Pattern ptr = Pattern.compile("^[-\\w.]+@([-A-z0-9]+\\.)+[A-z]{2,4}$");
             isValid = isValid && ptr.matcher(email).matches();
         }
 
