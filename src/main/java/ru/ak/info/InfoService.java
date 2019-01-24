@@ -19,6 +19,6 @@ public class InfoService extends Validator {
      */
     @WebMethod(operationName = "version")
     public String version() {
-        return "1.0.0.1-3";
+        return "1.0.0.1-4";
     }
 }
