@@ -1,9 +1,13 @@
 package ru.ak.info;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import ru.ak.emailvalidator.Validator;
+import ru.ak.model.Build;
 
 /**
  * Корневой Web-сервис, содержащий метод получения версии
@@ -19,6 +23,34 @@ public class InfoService extends Validator {
      */
     @WebMethod(operationName = "version")
     public String version() {
-        return "1.0.0.1-4";
+        return builds().size() == 0 ? "null" : builds().get(builds().size() - 1).getVersion();
+    }
+
+    /** 
+    * Получение списка изменений компоненты
+    * @return Список
+    */
+    @WebMethod(operationName = "details") 
+    public List<Build> details() {
+        return builds();
+    }
+    
+    private List<Build> builds() {
+        List<Build> builds = new ArrayList<>();
+        builds.add(            
+            new Build("1.0.0.1", description_1_0_0_1()));
+
+        builds.add(            
+            new Build("1.0.0.2", description_1_0_0_2()));
+    
+        return builds;
+    }
+
+    private String description_1_0_0_1() {
+        return "Создание проекта";
+    }
+
+    private String description_1_0_0_2() {
+        return "Миграция на Java 11, рефакторинг проекта";
     }
 }

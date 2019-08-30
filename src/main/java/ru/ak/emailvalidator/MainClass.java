@@ -5,6 +5,7 @@ import ru.ak.info.InfoService;
 import javax.xml.ws.Endpoint;
 import java.io.File;
 import java.io.IOException;
+import java.util.ResourceBundle;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
@@ -17,6 +18,7 @@ import java.util.logging.Logger;
 public class MainClass {
 
     private static Logger logger;
+    private static ResourceBundle config = ResourceBundle.getBundle("config");
     
     public static Logger getInstanceLogger() {
         if (logger == null) {
@@ -44,7 +46,7 @@ public class MainClass {
             }            
         }
                
-        String port = "48800"; // default
+        String port = config.getString("port");
         if (args.length == 2) {
             if (args[0].equalsIgnoreCase("-p")) {
             	port = args[1];

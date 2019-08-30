@@ -10,3 +10,9 @@
  
 # maven
 target/
+
+# vscode #
+.vscode
+.settings
+.project
+.classpath

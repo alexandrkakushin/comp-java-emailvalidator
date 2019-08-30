@@ -1,9 +1,7 @@
-package ru.ak.emailvalidator.model;
+package ru.ak.model;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 
-@XmlAccessorType(XmlAccessType.FIELD)
 public class Response {
 	
 	private String messageId;
@@ -21,34 +19,24 @@ public class Response {
 		this.error = error;
 		this.description = descrption;
 	}
-	
+
+	@XmlElement
 	public String getMessageId() {
 		return messageId;
 	}
-	public void setMessageId(String messageId) {
-		this.messageId = messageId;
-	}
+
+	@XmlElement
 	public boolean isError() {
 		return error;
 	}
-	public void setError(boolean error) {
-		this.error = error;
-	}
+
+	@XmlElement
 	public String getDescription() {
 		return description;
 	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
 
+	@XmlElement
 	public String getTextMessage() {
 		return textMessage;
 	}
-
-	public void setTextMessage(String textMessage) {
-		this.textMessage = textMessage;
-	}
-	
-	
-	
 }
