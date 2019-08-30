@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.xml.bind.annotation.XmlElement;
 
 import ru.ak.emailvalidator.Validator;
 import ru.ak.model.Build;
@@ -31,8 +32,21 @@ public class InfoService extends Validator {
     * @return Список
     */
     @WebMethod(operationName = "details") 
-    public List<Build> details() {
-        return builds();
+    public Builds details() {
+        return new Builds(builds());
+    }
+
+    public static class Builds {
+        private List<Build> builds;
+
+        public Builds(List<Build> builds) {
+            this.builds = builds;
+        }
+
+        @XmlElement
+        public List<Build> getBuilds() {
+            return builds;
+        }
     }
     
     private List<Build> builds() {
