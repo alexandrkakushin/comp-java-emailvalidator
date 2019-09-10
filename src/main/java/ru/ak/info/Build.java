@@ -1,4 +1,4 @@
-package ru.ak.model;
+package ru.ak.info;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlElement;
  * @author a.kakushin
  */
 public class Build {
+
     private String version;
     private String description;
 

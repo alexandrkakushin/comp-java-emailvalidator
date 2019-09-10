@@ -8,7 +8,6 @@ import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlElement;
 
 import ru.ak.emailvalidator.Validator;
-import ru.ak.model.Build;
 
 /**
  * Корневой Web-сервис, содержащий метод получения версии
