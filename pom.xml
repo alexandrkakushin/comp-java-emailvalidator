@@ -19,7 +19,7 @@
 
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <jaxws.version>2.3.2</jaxws.version>
-        <hibernate-validator.version>6.0.7.Final</hibernate-validator.version>
+        <hibernate-validator.version>6.1.0.Final</hibernate-validator.version>
 
         <maven-compiler.version>3.8.0</maven-compiler.version>
         <maven-assembly.version>3.1.1</maven-assembly.version>
