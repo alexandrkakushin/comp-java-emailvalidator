@@ -5,6 +5,15 @@
     <artifactId>emailvalidator</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
+    
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>comp-java-emailvalidator</name>
+            <url>https://maven.pkg.github.com/alexandrkakushin/comp-java-emailvalidator</url>
+        </repository>
+    </distributionManagement>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
