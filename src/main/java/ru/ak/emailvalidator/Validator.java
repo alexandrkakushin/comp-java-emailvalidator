@@ -17,14 +17,15 @@ public class Validator {
 
     /**
      * Проверка валидности адреса электронной почты
-     * @param email адрес
+     * 
+     * @param email        адрес
+     * @param domain2level обязательное наличие домена второго уровня (например,
+     *                     test.com)
      * @return результат проверки
      */
     @WebMethod
-    public boolean isValid(
-            @WebParam(name = "email") String email,
-            @WebParam(name = "domain2level") boolean domain2level
-    ) {
+    public boolean isValid(@WebParam(name = "email") String email,
+            @WebParam(name = "domain2level") boolean domain2level) {
         boolean isValid;
 
         EmailValidator validator = new EmailValidator();
